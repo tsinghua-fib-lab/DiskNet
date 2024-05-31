@@ -8,7 +8,7 @@ The repo is the official implementation for our  paper: "Predicting Long-term Dy
 
 DiskNet: (1) Hyperbolic Renormalization Group, which identifies the representation and skeleton of network dynamics; (2) Neural Dynamics on Skeleton, which models the dynamics of super-nodes on the skeleton; and (3) Degree-based Super-Resolution, which lifts the predicted values of super-nodes to the original nodes.
 
-![architecture](.\asset\architecture.png)
+![architecture](./asset/architecture.png)
 
 
 
