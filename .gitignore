@@ -1,8 +1,8 @@
-*.png
-*.pdf
-*.gif
-*.jpg
-*.svg
+# *.png
+# *.pdf
+# *.gif
+# *.jpg
+# *.svg
 
 *.npz
 *.npy
