@@ -1,0 +1,98 @@
+# Key
+graph_type: BA # BA, WS, Drosophila, Social, Web, Airport, PowerGrid
+model: DiskNet
+dynamics: HindmarshRose # HindmarshRose, FitzHughNagumo, CoupledRossler
+
+# Common
+cpu_num: 0
+seed: 612
+device: cuda:5
+log_root: logs/
+data_root: data/
+
+# NetworkSimulator
+node_num: 5000
+layout: random
+edge_num: 3 # BA
+ring_lattice_k: 5 # WS
+rewiring_prob: 0.1 # WS
+
+# Mercator
+quiet_mode: True
+fast_mode: True
+validation_mode: True
+post_kappa: True
+refine: False
+
+# Model
+lr: 0.001
+max_epoch: 50
+lr_step: 50
+lr_decay: 0.9
+val_interval: 1
+
+DiskNet:
+  n_dim: 2
+  ratio: 0.02
+  ag_hid_dim: 8
+  sr_hid_dim: 16
+  ode_hid_dim: 16
+  k: 5
+  log: True
+  method: euler
+  pretrain_epoch: 3000
+  prior_init: True
+
+# Dataset
+lookback: 12
+horizon: 120
+train_ratio: 0.6
+val_ratio: 0.2
+test_ratio: 0.2
+batch_size: 8
+
+# HindmarshRose
+HindmarshRose:
+  dim: 3
+  total_t: 20.0
+  sim_dt: 0.01
+  dt: 0.04
+  epsilon: 0.15
+  a: 1.0
+  b: 3.0
+  c: 1.0
+  u: 5.0
+  s: 4.0
+  r: 0.005
+  I: 3.24
+  v: 2.0
+  lam: 10.0
+  omega: 1.0
+  x0: -1.6
+  z_min: [-1, -7, 2.5]
+  z_max: [2, 0.5, 4]
+# FitzHughNagumo
+FitzHughNagumo:
+  dim: 2
+  total_t: 50.0
+  sim_dt: 0.01
+  dt: 0.1
+  a: 0.28
+  b: 0.5
+  c: -0.04
+  epsilon: 1.0
+  z_min: [-1.6, -0.5]
+  z_max: [1.5, 6.5]
+# CoupledRossler
+CoupledRossler:
+  dim: 3
+  total_t: 50.0
+  sim_dt: 0.005
+  dt: 0.1
+  epsilon: 0.15
+  a: 0.2
+  b: 0.2
+  c: -6.0
+  delta: 0.2
+  z_min: [-10, -10, 0]
+  z_max: [10, 10, 5]

@@ -1,0 +1,22 @@
+*.png
+*.pdf
+*.gif
+*.jpg
+*.svg
+
+*.npz
+*.npy
+*.pkl
+*.pth
+*.h5
+*.ckpt
+*.pt
+
+*.csv
+
+*.json
+*.conf
+
+# mercator
+*.inf*
+*.obs*

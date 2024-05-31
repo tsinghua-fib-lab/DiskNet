@@ -1,0 +1,9 @@
+# SimBackbone
+torch
+omegaconf
+torchdiffeq
+mercator # https://github.com/networkgeometry/mercator?tab=readme-ov-file
+sdeint
+scienceplots
+matplotlib
+scikit-learn
