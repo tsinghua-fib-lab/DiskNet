@@ -224,7 +224,7 @@ class DiskNet(nn.Module):
             nn.ReLU(),
             nn.LayerNorm(self.model_args.ag_hid_dim),
         )
-        self.softmax = nn.Softmax(dim=0)
+        self.softmax = nn.Softmax(dim=-1)
         
         # State aggregation
         self.agc_mlp = nn.Sequential(
