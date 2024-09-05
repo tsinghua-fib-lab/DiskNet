@@ -41,5 +41,11 @@ python main.py
 If you find this repo helpful, please cite our paper.
 
 ```
-Coming soon.
+@inproceedings{li2024predicting,
+  title={Predicting Long-term Dynamics of Complex Networks via Identifying Skeleton in Hyperbolic Space},
+  author={Li, Ruikun and Wang, Huandong and Piao, Jinghua and Liao, Qingmin and Li, Yong},
+  booktitle={Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  pages={1655--1666},
+  year={2024}
+}
 ```
