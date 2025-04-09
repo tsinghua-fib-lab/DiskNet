@@ -268,9 +268,10 @@ class DiskNet(nn.Module):
         print('Initializing poincare embedding...')
         
         _, angular, radius = HyperbolicEmbedding(self.args).fit_transform()
-        radius = radius / radius.max() # normalize radius to [0, 1]
         
-        x, y = radius * np.cos(angular), radius * np.sin(angular)
+        # Poincaré Disk to Euclidean
+        x = np.tanh(radius / 2) * np.cos(angular)
+        y = np.tanh(radius / 2) * np.sin(angular)
         poincare_embedding = torch.from_numpy(np.stack([x, y], axis=1)).float().to(self.args.device)
         
         print('Done.')
