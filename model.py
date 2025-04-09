@@ -271,8 +271,8 @@ class DiskNet(nn.Module):
         
         # Poincaré Disk to Euclidean
         radius /= radius.max() # enhance hierarchical structure
-        x = np.tanh(radius / 2) * np.cos(angular)
-        y = np.tanh(radius / 2) * np.sin(angular)
+        r = np.tanh(radius / 2)
+        x, y = r * np.cos(angular), r * np.sin(angular)
         poincare_embedding = torch.from_numpy(np.stack([x, y], axis=1)).float().to(self.args.device)
         
         print('Done.')
